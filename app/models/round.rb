@@ -1,5 +1,5 @@
 class Round < ApplicationRecord
-  MAX_ATTEMPTS = 20
+  MAX_ATTEMPTS = 10
 
   belongs_to :footballer
 

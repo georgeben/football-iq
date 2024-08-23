@@ -8,7 +8,6 @@ class RoundsController < ApplicationController
 
   def new_guess
     @round = Round.find(params[:id])
-    puts "Name:  #{@round.footballer.name}"
     
     prompt = @round.footballer.build_prompt
     user_message = new_guess_params[:message]
@@ -16,17 +15,16 @@ class RoundsController < ApplicationController
     @response = GeminiAiService.new(max_output_tokens: 100).generate_content(user_message:, prompt:)
     @round.guesses.create!(message: user_message, response: @response)
 
+    total_guesses = @round.total_guesses + 1
     if @response == "Correct"
-      @round.update(result: :success, total_guesses: @round.total_guesses + 1)
-    else 
-      @round.update(total_guesses: @round.total_guesses + 1)
+      @round.update(result: :success, total_guesses:)
+    else
+      update = { total_guesses: }
+      update[:result] = :failed if total_guesses >= Round::MAX_ATTEMPTS
+
+      @round.update(update)
     end
 
-    # whenever a round is updated, broadcast it to the view
-
-    puts "Response! #{@response}"
-
-    # for html render new_guess
     respond_to do |format|
       format.turbo_stream
     end

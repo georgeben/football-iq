@@ -1,3 +1,7 @@
 <%= turbo_stream.replace @round do %>
   <%= render "rounds/result", round: @round, response: @response %>
 <% end %>
+
+<%= turbo_stream.replace dom_id(@round, :controls) do %>
+  <%= render "rounds/controls", round: @round %>
+<% end %>
