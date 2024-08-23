@@ -1,0 +1,3 @@
+<%= turbo_stream.replace @round do %>
+  <%= render "rounds/result", round: @round, response: @response %>
+<% end %>

@@ -1,0 +1,49 @@
+1. the instructions should be printed to the screen at the start of every game
+2. A random football player should be selected from the list of players at the start of every game
+3. A user can type in a question.
+4. The question should be sent to an LLM, along with data about a player.
+5. The LLM should respond with yes or no
+6. Increment the number of tries
+7. The game ends when a user successfully guesses the players name or runs out of tries
+8. The user can decide to end a game or restart
+
+
+Models:
+Footballer
+Game
+Messages
+
+Footballer
+- id
+- data:
+  - name
+  - age
+  - current_club
+  - previous_clubs
+  - league
+  - nationality
+  - shirt_number
+  - positions
+  - trophies
+  - height
+  - career_goals
+  - is_retired
+
+How do I prevent duplicates??
+
+
+when a user makes a guess, how do I know what player is being guessed?
+the player needs to be stored somewhere
+
+Round
+- footballer_id
+- total_guesses
+- result
+
+
+Guesses
+- round_id
+- text
+- response (from open ai)
+
+AIzaSyC8EiO1srSBTr2m1zWqPgUzGPsmlLMQCpU

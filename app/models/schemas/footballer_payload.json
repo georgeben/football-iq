@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Footballer",
+  "description": "A football player",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "number"
+    },
+    "current_club": {
+      "type": "string"
+    },
+    "previous_clubs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "league": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "shirt_number": {
+      "type": "number"
+    },
+    "positions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "trophies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "height": {
+      "type": "number"
+    },
+    "career_goals": {
+      "type": "number"
+    },
+    "is_retired": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name",
+    "current_club",
+    "league",
+    "nationality",
+    "shirt_number",
+    "positions",
+    "height"
+  ]
+}
