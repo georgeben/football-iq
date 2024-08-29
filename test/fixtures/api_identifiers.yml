@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identifiable: one
+  identifiable_type: Identifiable
+
+two:
+  identifiable: two
+  identifiable_type: Identifiable
