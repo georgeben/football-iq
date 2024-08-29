@@ -10,14 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_21_231605) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_27_002802) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "api_identifiers", force: :cascade do |t|
+    t.string "provider_name", null: false
+    t.string "provider_id", null: false
+    t.string "identifiable_type", null: false
+    t.bigint "identifiable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["identifiable_type", "identifiable_id"], name: "index_api_identifiers_on_identifiable"
+    t.index ["provider_name", "provider_id", "identifiable_type"], name: "idx_unique_api_identifiers", unique: true
+  end
 
   create_table "footballers", force: :cascade do |t|
     t.jsonb "data", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "digest", null: false
+    t.index ["digest"], name: "index_footballers_on_digest", unique: true
   end
 
   create_table "guesses", force: :cascade do |t|
@@ -36,6 +49,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_21_231605) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["footballer_id"], name: "index_rounds_on_footballer_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "logo", null: false
+    t.string "league", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "idx_unique_name", unique: true
   end
 
   add_foreign_key "guesses", "rounds"

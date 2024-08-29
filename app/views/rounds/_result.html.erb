@@ -5,7 +5,7 @@
       <p class="text-gray-600 text-md text-center">
         <%= round.result == "success" ? 
               " The player is #{round.footballer.name}. It took you only #{round.total_guesses} attempts 😄" 
-              : "Too bad. You had #{round.total_guesses} attempts, but you couldn't meet the target! The player is #{round.footballer.name}." %>
+              : "Too bad. You had #{round.total_guesses} attempts, but you couldn't meet the target! The player is #{round.footballer.common_name} of #{round.footballer.current_club}." %>
       </p>
     </div>
     <div class="flex justify-center space-x-6 items-center mb-4">

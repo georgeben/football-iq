@@ -72,3 +72,5 @@ end
 gem 'activerecord_json_validator', '~> 3.0.0'
 
 gem 'gemini-ai', '~> 4.2.0'
+
+gem 'api_football_v3'

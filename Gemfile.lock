@@ -80,6 +80,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    api_football_v3 (0.0.2)
     base64 (0.2.0)
     bigdecimal (3.1.8)
     bindex (0.8.1)
@@ -115,7 +116,12 @@ GEM
     faraday-typhoeus (1.1.0)
       faraday (~> 2.0)
       typhoeus (~> 1.4)
+    ffi (1.17.0-aarch64-linux-gnu)
+    ffi (1.17.0-arm-linux-gnu)
+    ffi (1.17.0-arm64-darwin)
+    ffi (1.17.0-x86-linux-gnu)
     ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
     gemini-ai (4.2.0)
       event_stream_parser (~> 1.0)
       faraday (~> 2.10)
@@ -322,6 +328,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord_json_validator (~> 3.0.0)
+  api_football_v3
   bootsnap
   capybara
   debug

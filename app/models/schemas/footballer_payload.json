@@ -7,10 +7,16 @@
     "name": {
       "type": "string"
     },
-    "age": {
+    "common_name": {
+      "type": "string"
+    },
+    "date_of_birth": {
       "type": "number"
     },
     "current_club": {
+      "type": "string"
+    },
+    "photo": {
       "type": "string"
     },
     "previous_clubs": {
@@ -44,7 +50,7 @@
       "uniqueItems": true
     },
     "height": {
-      "type": "number"
+      "type": "string"
     },
     "career_goals": {
       "type": "number"
